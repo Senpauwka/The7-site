@@ -5,6 +5,37 @@ const text = [
 "> system online"
 ];
 
+const bootLines = [
+"INITIALIZING...",
+"LOADING MODULES...",
+"CONNECTING TO GITHUB...",
+"ACCESS GRANTED"
+];
+
+const loaderText = document.getElementById("loaderText");
+const loader = document.getElementById("loader");
+
+let i = 0;
+
+function boot(){
+
+if(i < bootLines.length){
+
+loaderText.innerHTML = bootLines[i];
+i++;
+
+setTimeout(boot,700);
+
+}else{
+
+loader.classList.add("hideLoader");
+
+}
+
+}
+
+boot();
+
 let line = 0;
 let char = 0;
 

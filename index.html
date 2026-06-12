@@ -3,48 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>THE7</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
 <div id="loader">
-    <div id="loaderText"></div>
+
+    <img src="assets/loader.gif" id="loaderGif">
+
+    <div id="loaderText">
+        INITIALIZING...
+    </div>
+
 </div>
 
-<div class="noise"></div>
+<video
+id="bgVideo"
+autoplay
+muted
+loop
+playsinline>
+
+<source src="assets/bg.mp4" type="video/mp4">
+
+</video>
+
+<div id="particles"></div>
 <div id="light"></div>
 
-<div class="container">
+<div class="card">
 
     <img
-    src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
-    id="artifact">
+    src="assets/avatar.png"
+    class="avatar">
 
-    <h1 id="title">THE7</h1>
+    <h1>THE7</h1>
 
     <p class="subtitle">
         nothing interesting here
     </p>
 
-    <div class="card">
-        <p>user: guest</p>
-        <p>access level: restricted</p>
+    <div class="status">
+        ● online
     </div>
 
-    <div class="buttons">
-        <a href="https://github.com/Senpauwka" target="_blank">github</a>
-        <a href="#">projects</a>
-        <a href="#">contact</a>
-    </div>
+    <div class="socials">
 
-    <div id="terminal">
-        <span id="typed"></span>
+        <a href="https://t.me/USERNAME" class="social">
+            <i class="fab fa-telegram"></i>
+            <span>TG</span>
+        </a>
+
+        <a href="#" class="social">
+            <i class="fab fa-twitch"></i>
+            <span>Twitch</span>
+        </a>
+
+        <a href="#" class="social">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+        </a>
+
     </div>
 
 </div>
 
+<button id="musicBtn">
+♫ MUSIC
+</button>
+
+<audio
+id="music"
+src="assets/music.mp3">
+</audio>
+
 <script src="script.js"></script>
+
 </body>
 </html>

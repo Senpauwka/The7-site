@@ -1,30 +1,30 @@
-const text = [
-"> booting system...",
-"> loading modules...",
-"> github connected",
-"> access granted"
-];
+const loaderLines = [
 
-const bootLines = [
 "INITIALIZING...",
-"LOADING MODULES...",
-"CONNECTING TO GITHUB...",
+"LOADING PROFILE...",
+"CONNECTING...",
 "ACCESS GRANTED"
+
 ];
 
-const loaderText = document.getElementById("loaderText");
-const loader = document.getElementById("loader");
+const loader =
+document.getElementById("loader");
 
-let bootIndex = 0;
+const loaderText =
+document.getElementById("loaderText");
+
+let step = 0;
 
 function boot(){
 
-if(bootIndex < bootLines.length){
+if(step < loaderLines.length){
 
-loaderText.innerHTML = bootLines[bootIndex];
-bootIndex++;
+loaderText.innerText =
+loaderLines[step];
 
-setTimeout(boot,700);
+step++;
+
+setTimeout(boot,900);
 
 }else{
 
@@ -36,62 +36,57 @@ loader.classList.add("hideLoader");
 
 boot();
 
-let line = 0;
-let char = 0;
+const music =
+document.getElementById("music");
 
-const typed = document.getElementById("typed");
+const musicBtn =
+document.getElementById("musicBtn");
 
-function type(){
+musicBtn.onclick = ()=>{
 
-if(line >= text.length) return;
+if(music.paused){
 
-if(char < text[line].length){
+music.play();
 
-typed.innerHTML += text[line][char];
-
-char++;
-
-setTimeout(type,40);
+musicBtn.innerText =
+"♫ PAUSE";
 
 }else{
 
-typed.innerHTML += "<br>";
+music.pause();
 
-line++;
-char = 0;
-
-setTimeout(type,300);
+musicBtn.innerText =
+"♫ MUSIC";
 
 }
 
+};
+
+const light =
+document.getElementById("light");
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+light.style.left =
+e.clientX + "px";
+
+light.style.top =
+e.clientY + "px";
+
 }
+);
 
-setTimeout(type,3200);
+document.addEventListener(
+"touchmove",
+(e)=>{
 
-const light = document.getElementById("light");
+light.style.left =
+e.touches[0].clientX + "px";
 
-document.addEventListener("mousemove",(e)=>{
+light.style.top =
+e.touches[0].clientY + "px";
 
-light.style.left = e.clientX + "px";
-light.style.top = e.clientY + "px";
-
-});
-
-document.addEventListener("touchmove",(e)=>{
-
-light.style.left = e.touches[0].clientX + "px";
-light.style.top = e.touches[0].clientY + "px";
-
-});
-
-const artifact = document.getElementById("artifact");
-
-document.addEventListener("mousemove",(e)=>{
-
-const x = (e.clientX/window.innerWidth - 0.5) * 20;
-const y = (e.clientY/window.innerHeight - 0.5) * 20;
-
-artifact.style.transform =
-`translate(-50%,-50%) rotateY(${x}deg) rotateX(${-y}deg)`;
-
-});
+}
+);

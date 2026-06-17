@@ -90,3 +90,20 @@ e.touches[0].clientY + "px";
 
 }
 );
+
+function updateUTC(){
+
+const now = new Date();
+
+document.getElementById(
+"utcTime"
+).textContent = now.toUTCString().split(" ")[4];
+
+}
+
+updateUTC();
+
+setInterval(
+updateUTC,
+1000
+);

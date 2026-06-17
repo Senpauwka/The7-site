@@ -39,30 +39,38 @@ z-index:-2;
 }
 
 .card{
-width:340px;
 
-padding:30px;
+width:390px;
 
-border-radius:25px;
+padding:40px;
+
+border-radius:30px;
 
 background:
-rgba(255,255,255,.06);
+rgba(255,255,255,.05);
 
 backdrop-filter:
-blur(18px);
+blur(20px);
 
 border:
-1px solid rgba(255,255,255,.1);
+1px solid rgba(255,255,255,.08);
 
 text-align:center;
 
 z-index:5;
+
+box-shadow:
+0 0 40px rgba(255,255,255,.04);
+
+animation:
+cardAppear 1.2s ease;
 }
+
 
 .avatar{
 
-width:120px;
-height:120px;
+width:130px;
+height:130px;
 
 border-radius:50%;
 
@@ -71,8 +79,13 @@ object-fit:cover;
 margin-bottom:20px;
 
 border:
-2px solid rgba(255,255,255,.15);
+2px solid rgba(255,255,255,.12);
 
+box-shadow:
+0 0 25px rgba(255,255,255,.08);
+
+animation:
+float 4s ease-in-out infinite;
 }
 
 h1{
@@ -92,28 +105,45 @@ color:#7cff8b;
 margin-bottom:25px;
 }
 
-.socials{
-display:flex;
-justify-content:center;
-gap:25px;
-}
-
 .social{
+
+width:70px;
+height:70px;
+
 display:flex;
 flex-direction:column;
 
+justify-content:center;
 align-items:center;
 
-gap:8px;
+gap:6px;
 
 text-decoration:none;
+
 color:white;
 
-transition:.25s;
+border-radius:18px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+transition:.3s;
 }
 
 .social:hover{
-transform:translateY(-5px);
+
+transform:
+translateY(-6px)
+scale(1.05);
+
+background:
+rgba(255,255,255,.08);
+
+box-shadow:
+0 0 20px rgba(255,255,255,.08);
 }
 
 .social i{
@@ -129,28 +159,35 @@ opacity:.8;
 
 position:fixed;
 
-bottom:25px;
-left:50%;
+bottom:30px;
+right:25px;
 
-transform:translateX(-50%);
+left:auto;
 
-padding:12px 22px;
+transform:none;
+
+padding:14px 18px;
 
 border:none;
 
-border-radius:50px;
+border-radius:18px;
 
 background:
-rgba(255,255,255,.08);
+rgba(255,255,255,.07);
 
 backdrop-filter:
-blur(10px);
+blur(12px);
 
 color:white;
 
 cursor:pointer;
 
 z-index:10;
+
+font-size:13px;
+
+border:
+1px solid rgba(255,255,255,.08);
 }
 
 #loader{
@@ -210,4 +247,34 @@ transform:
 translate(-50%,-50%);
 
 z-index:-1;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+@keyframes cardAppear{
+
+from{
+opacity:0;
+transform:
+translateY(30px)
+scale(.95);
+}
+
+to{
+opacity:1;
+transform:
+translateY(0)
+scale(1);
+}
+
 }

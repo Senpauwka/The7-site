@@ -278,3 +278,39 @@ scale(1);
 }
 
 }
+
+.systemInfo{
+
+margin-bottom:25px;
+
+padding:15px;
+
+border-radius:15px;
+
+background:
+rgba(255,255,255,.03);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+font-family:monospace;
+
+font-size:12px;
+
+text-align:left;
+
+line-height:1.8;
+
+opacity:.85;
+
+}
+
+.systemInfo span{
+
+float:right;
+
+opacity:1;
+
+color:white;
+
+}
